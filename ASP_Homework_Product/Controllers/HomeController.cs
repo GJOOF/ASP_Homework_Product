@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ASP_Homework_Product.Models;
+using GuitarShop;
 
 namespace ASP_Homework_Product.Controllers
 {
@@ -18,9 +19,10 @@ namespace ASP_Homework_Product.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public string Index()
         {
-            return View();
+            ProductRepository productRepository = new ProductRepository();
+            return string.Join("\n\n", productRepository.GetProducts());
         }
 
         public IActionResult Privacy()
