@@ -1,4 +1,4 @@
-﻿namespace GuitarShop.Models
+﻿namespace ASP_Homework_Product.Models
 {
     public class Product
     {
@@ -7,18 +7,20 @@
         public string Name { get; }
         public decimal Cost { get; }
         public string Description { get; }
+        public string ImagePath { get; }
 
-        public Product(string name, int сost, string description)
+        public Product(string name, int сost, string description, string imagePath)
         {
             Id = IdCreator++;
             Name = name;
             Cost = сost;
             Description = description;
+            ImagePath = imagePath;
         }
 
         public override string ToString()
         {
-            return $"ID: {this.Id}\n{this.Name}\n{this.Cost} p.\n{this.Description}";
+            return $"Product: {this.Name}\n{this.Cost} p.\n{this.Description}";
         }
     }
 }
