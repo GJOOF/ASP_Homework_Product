@@ -8,10 +8,10 @@ namespace ASP_Homework_Product
 {
     public class ProductRepository
     {
-        private static List<Product> products = new List<Product>()
+        private List<Product> products = new List<Product>()
         {
             new Product("Gibson EDS-1275 Doubleneck Cherry Red", 727000,
-                "\r\nBody Style:SG\r\nBody Shape:EDS-1275\r\nBody Material:Solid Mahogany\r\nBody Finish:Gloss Nitrocellulose Lacquer","/images/gibson_doubleneck_cherry_red.jpg"),
+                "\n\nBody Style:SG\n\nBody Shape:EDS-1275\n\nBody Material:Solid Mahogany\n\nBody Finish:Gloss Nitrocellulose Lacquer","/images/gibson_doubleneck_cherry_red.jpg"),
             
             new Product("Gibson SG Standard Cherry", 218000,
                 "\r\nBody Style:SG\r\nBody Material:Mahogany\r\nBinding:Single Ply Cream, Fretboard\r\nBody Finish:Satin Nitrocellulose Lacquer","/images/gibson_sg_standard_cherry.jpg"),

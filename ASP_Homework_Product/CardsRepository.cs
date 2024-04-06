@@ -5,16 +5,16 @@ using System.Linq;
 
 namespace ASP_Homework_Product
 {
-    public static class CardsRepository
+    public class CardsRepository
     {
-        private static List<Card> cards = new List<Card>();
+        private List<Card> cards = new List<Card>();
 
-        internal static Card TryGetByUserId(string userId)
+        internal Card TryGetByUserId(string userId)
         {
             return cards.FirstOrDefault(x => x.UserId == userId);
         }
 
-        public static void Add(Product product, string userId)
+        public void Add(Product product, string userId)
         {
             var exisitingCard = TryGetByUserId(userId);
             if (exisitingCard == null)
