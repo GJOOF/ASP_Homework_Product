@@ -7,14 +7,14 @@ namespace ASP_Homework_Product.Controllers
     public class ProductController : Controller
     {
 
-        private readonly ProductRepository productRepository;
-        public ProductController(ProductRepository productRepository)
+        private readonly IProductRepository IProductRepository;
+        public ProductController(IProductRepository IProductRepository)
         {
-            this.productRepository = productRepository;
+            this.IProductRepository = IProductRepository;
         }
         public IActionResult Index(int id)
         {
-            var product = productRepository.TryGetById(id);
+            var product = IProductRepository.TryGetById(id);
             return View(product);
         }
     }

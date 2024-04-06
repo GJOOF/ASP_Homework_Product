@@ -1,15 +1,15 @@
 ﻿using ASP_Homework_Product.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 namespace ASP_Homework_Product
 {
-    public class CardsRepository
+    public class CardsInMemoryRepository : ICardsRepository
     {
         private List<Card> cards = new List<Card>();
 
-        internal Card TryGetByUserId(string userId)
+        public Card TryGetByUserId(string userId)
         {
             return cards.FirstOrDefault(x => x.UserId == userId);
         }
@@ -54,6 +54,5 @@ namespace ASP_Homework_Product
                 }
             }
         }
-
     }
 }

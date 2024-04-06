@@ -5,12 +5,12 @@ namespace ASP_Homework_Product.Controllers
 {
     public class CardController : Controller
     {
-        private readonly ProductRepository productRepository;
-        private readonly CardsRepository cardsRepository;
+        private readonly IProductRepository IProductRepository;
+        private readonly ICardsRepository cardsRepository;
 
-        public CardController(ProductRepository productRepository, CardsRepository cardsRepository)
+        public CardController(IProductRepository IProductRepository, ICardsRepository cardsRepository)
         {
-            this.productRepository = productRepository;
+            this.IProductRepository = IProductRepository;
             this.cardsRepository = cardsRepository;
         }
 
@@ -22,7 +22,7 @@ namespace ASP_Homework_Product.Controllers
         
         public IActionResult Add(int productId)
         {
-            var product = productRepository.TryGetById(productId);
+            var product = IProductRepository.TryGetById(productId);
             cardsRepository.Add(product, Constants.UserId);
             return RedirectToAction("Index");
         }
