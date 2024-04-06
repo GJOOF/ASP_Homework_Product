@@ -6,5 +6,7 @@ namespace ASP_Homework_Product
     {
         void Add(Product product, string userId);
         Card TryGetByUserId(string userId);
+        void Clear(string userId);
+        void DecreaseAmount(int productId, string userId);
     }
 }

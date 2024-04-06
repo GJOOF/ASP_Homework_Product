@@ -26,5 +26,17 @@ namespace ASP_Homework_Product.Controllers
             cardsRepository.Add(product, Constants.UserId);
             return RedirectToAction("Index");
         }
+
+        public ActionResult DecreaseAmount(int productId)
+        {
+            cardsRepository.DecreaseAmount(productId, Constants.UserId);
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Clear()
+        {
+            cardsRepository.Clear(Constants.UserId);
+            return RedirectToAction("Index");
+        }
     }
 }
