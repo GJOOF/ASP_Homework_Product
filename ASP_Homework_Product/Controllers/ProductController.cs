@@ -1,5 +1,4 @@
-﻿using ASP_Homework_Product.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel;
 
 namespace ASP_Homework_Product.Controllers
@@ -7,11 +6,12 @@ namespace ASP_Homework_Product.Controllers
     public class ProductController : Controller
     {
 
-        private readonly ProductRepository productRepository;
-        public ProductController()
+        private readonly IProductRepository productRepository;
+        public ProductController(IProductRepository productRepository)
         {
-            productRepository = new ProductRepository();
+            this.productRepository = productRepository;
         }
+
         public IActionResult Index(int id)
         {
             var product = productRepository.TryGetById(id);
