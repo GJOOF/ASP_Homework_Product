@@ -23,6 +23,7 @@ namespace ASP_Homework_Product
         {
             services.AddSingleton<IProductRepository, ProductsInMemoryRepository>();
             services.AddSingleton<ICardsRepository, CardsInMemoryRepository>();
+            services.AddSingleton<IOrdersRepository, OrdersInMemoryRepository>();
             services.AddControllersWithViews();
         }
 
